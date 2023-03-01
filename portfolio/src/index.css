@@ -5,18 +5,101 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+overflow-x: hidden;
+color: #8892b0;
+background-color: #0a192f !important;
+font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif !important;
+}
+:root{
+  --green:#64ffda;
+  --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --navy-shadow: rgba(2,12,27,0.7);
+    --dark-slate: #495670;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100,255,218,0.1);
+    --pink: #f57dff;
+    --blue: #57cbff;
 }
 
 html {
   background-color: #18181b;
 }
-
+.header{
+  font-family:"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.headerWidth{
+  width: 98vw;
+}
+.green-color{
+  color: var(--green);
+}
+.h-green{
+  transition: 0.4s;
+}
+
+.h-green:hover{
+  color: var(--green) !important;
+}
+.slate{
+  color: var(--slate);
+}
+.l-slate{
+  color: var(--lightest-slate);
+}
+.name{
+  font-size: clamp(40px, 8vw, 80px) !important;
+}
+.spec{
+  font-size: clamp(30px, 6vw, 60px) !important;
+}
+.n-text{
+  font-size: clamp(16px, 3vw, 20px) !important;
+}
+.n-l-h{
+  line-height: 2;
+}
+.logo{
+ padding: 10px 25px !important;
+ /* width: 42px; */
+ /* max-width: 60px !important; */
+ border: 0 !important;
+ margin: 0 10px;
+ font-size: 2rem;
+ letter-spacing: 0.1em;
+}
+.leftGap{
+  margin: 0 0  40px 80px !important ;
+}
+.card , .cards:hover{
+  cursor: pointer;
+}
+.greenBtn{
+  border: 1px var(--green) solid ;
+  padding: 10px 20px;
+  border-radius: 0.375em;
+  color: var(--green);
+  transition: 0.4s;
+}
+.greenBtn:hover{
+background-color: var(--green-tint);
+}
+
 .header{
   z-index: 100;
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .c-pointer:hover{
@@ -26,3 +109,45 @@ cursor: pointer;
 .cards{
   min-height: 450px ;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 30px #512DA8 inset !important;
+}
+option{
+  color: black ;
+}
+.resBox{
+width: 100vw;
+}
+
+.skilCard{
+  margin: 30px 10px 10px 10px;
+  width: 300px !important;
+  height: 300px !important;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  border: none !important;
+  box-shadow: 0 0 20px -2px rgba(0,0,0,0.61);
+  /* -webkit-box-shadow: 17px 15px  13px -7px rgba(0,0,0,0.61);
+  -moz-box-shadow: 17px 15px  13px -7px rgba(0,0,0,0.61); */
+}
+
+.skilCard > img {
+  height: 250px;
+}
+
+.card-group{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* #skills-section{
+  width: 80vw !important;
+} */

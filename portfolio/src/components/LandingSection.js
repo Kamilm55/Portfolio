@@ -1,27 +1,56 @@
 import React from "react";
 import { Avatar, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  // faMedium,
+  // faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons";
 
-const greeting = "Hello, I am Kamil ";
-const bio1 = "A frontend developer";
-const bio2 = "specialized in React";
+const LandingSection = () => {
 
-// Implement the UI for the LandingSection component according to the instructions.
-// Use a combination of Avatar, Heading and VStack components.
-const LandingSection = () => (
-  <FullScreenSection
+  const socials = [
+    {
+      icon: faEnvelope,
+      url: "mailto: kamilmmmdov2905@gmail.com",
+    },
+    {
+      icon: faGithub,
+      url: "https://github.com/Kamilm55",
+    },
+    {
+      icon: faLinkedin,
+      url: "https://www.linkedin.com/in/kamil-memmedov/",
+    },
+  ];
+  return (
+    <FullScreenSection
     justifyContent="center"
     alignItems="center"
     isDarkBackground
-    backgroundColor="#2A4365"
   >
-      <Avatar size="2xl" src="https://media-exp1.licdn.com/dms/image/C4D03AQHhFXhAPPW5nA/profile-displayphoto-shrink_800_800/0/1659615762296?e=1675296000&v=beta&t=dAZhABOkOqOHLdJw18cycuYP9my1wN4NcFt6jmZ_Lis" />
-    <VStack spacing={8}>
-      <Heading size="xs">{greeting}</Heading>
-      <Heading>{bio1}</Heading>
-    </VStack>
-      <Heading>{bio2}</Heading>
-  </FullScreenSection>
-);
+    <div className="container">
+    <div className="row content p-3 my-3">
+      <p className="green-color n-text">My name is</p>
+      <Heading className="l-slate name" as='h1'>Kamil Memmedov</Heading>
+      <Heading className="slate spec" as='h1'>I am a Front-End Web Developer</Heading>
+      <div className="n-l-h">
+      <p className="slate n-text ">
+        I am a developer speciializing <span className="green-color">React js</span>. You can see my projects in GitHub profile.
+      </p>
+      </div>
+      <div className="my-3">
+        {socials.map( (social , index) => {
+          return  <a className="mx-2 text-light " target="blank" href={social.url} key={index}><FontAwesomeIcon icon={social.icon} size="2x" /></a>
+        })}
+        </div>
+        </div>
+      </div>
+     </FullScreenSection>
+  )
+  };
 
 export default LandingSection;

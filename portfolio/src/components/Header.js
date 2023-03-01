@@ -1,37 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-  faMedium,
-  faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
 
-
-const socials = [
-  {
-    icon: faEnvelope,
-    url: "mailto: kamilmmmdov2905@gmail.com",
-  },
-  {
-    icon: faGithub,
-    url: "https://github.com/Kamilm55",
-  },
-  {
-    icon: faLinkedin,
-    url: "https://www.linkedin.com/in/kamil-memmedov/",
-  },
-  {
-    icon: faMedium,
-    url: "https://medium.com",
-  },
-  {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com",
-  },
-];
 
 const Header = () => {
  const [offset , setOffset] = useState(0);
@@ -81,24 +50,27 @@ const Header = () => {
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#18181b"
+      backgroundColor="rgb(10 25 47 / 85%)"
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
+      <Box color="white" /* maxWidth="1280px" */ margin="0 auto">
         <HStack
           px={16}
           py={4}
           justifyContent="space-between"
           alignItems="center"
+          className='headerWidth'
         >
           <nav >
-           {socials.map( (social , index) => {
-             return  <a className="mx-2 text-light" target="blank" href={social.url} key={index}><FontAwesomeIcon icon={social.icon} size="2x" /></a>
-           })}
+            <div className=' c-pointer rounded greenBtn logo'>Kamil</div>
           </nav>
           <nav>
             <HStack spacing={8}>
-              <a className="text-decoration-none text-light" href="/#projects" onClick={() => handleClick("projects")}>Projects</a>
-              <a className="text-decoration-none text-light" href="/#contact-me" onClick={() => handleClick("contactme")}>Contact me</a>
+              <a className="text-decoration-none text-light h-green" href="/#projects" onClick={() => handleClick("about")}><span className='green-color'>01.</span> About</a>
+              <a className="text-decoration-none text-light h-green" href="/#projects" onClick={() => handleClick("experience")}><span className='green-color'>02.</span> Experience</a>
+              <a className="text-decoration-none text-light h-green" href="/#projects" onClick={() => handleClick("projects")}><span className='green-color'>03.</span> Projects</a>
+              <a className="text-decoration-none text-light h-green" href="/#skills" onClick={() => handleClick("skills")}><span className='green-color'>04.</span> Skills</a>
+              <a className="text-decoration-none text-light h-green" href="/#contact-me" onClick={() => handleClick("contactme")}><span className='green-color'>05.</span> Contact</a>
+              <button className=' greenBtn' type='button'>Resume</button>
             </HStack>
           </nav>
         </HStack>

@@ -14,8 +14,15 @@ const useSubmit = () => {
     message:"",
   });
 
+ 
 
-  const submit = async (url, data ) => {
+  const submit = async (/* url, */ data ,config ) => {
+  
+
+    if(window.Email){
+      window.Email.send(config)
+    }
+
     const random = Math.random();
     setLoading(true);
     try {
